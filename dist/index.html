@@ -10,6 +10,8 @@
 <script src="jquery-clockpicker.min.js"></script>
 
 <div id="spreadsheet"></div>
+<p><input type="button" value="  Add new task  " onclick="myTable.insertRow()"></p>
+<p><input type="button" value="  Get all Data  " onclick="getData()"></p>
 <div id="log"></div>
 <script>
 
@@ -127,6 +129,17 @@ var paste = function(data) {
     $('#log').append('Paste on the table ' + $(instance).prop('id') + '');
 }
 
+function getData() {
+	var data = JSON.stringify(myTable.getData(false));
+    $('#log').append('Get all data table ' + data + '');
+}
+
+function getRowData() {
+	var data = JSON.stringify(myTable.getRowData(1));
+    $('#log').append('Get all data table ' + data + '');
+}
+
+
 myTable = jspreadsheet(document.getElementById('spreadsheet'), {
     data:data,
 	columnSorting:false,
@@ -153,6 +166,7 @@ myTable = jspreadsheet(document.getElementById('spreadsheet'), {
             width:'100'
         }
     ],
+	allowComments:true,
 	//Số dòng và cột ít nhất
 	minDimensions:[5,5],
 	//Event

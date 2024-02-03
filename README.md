@@ -670,3 +670,139 @@ Jspreadsheet CE is released under the [MIT license]. Contact contact@jspreadshee
 *   [Tags](https://jsuites.net/v4/javascript-tags)
 *   [Tabs](https://jsuites.net/v4/javascript-tabs)
 *   [Toolbars](https://jsuites.net/v4/toolbar)
+
+
+General Methods
+Method	Example
+getData: Get the full or partial table data
+@Param boolan onlyHighlighedCells - Get only highlighted cells	myTable.getData([bool]);
+getJson: Get the full or partial table data in JSON format
+@Param boolan onlyHighlighedCells - Get only highlighted cells	myTable.getData([bool]);
+getRowData: Get the data from one row by number
+@Param integer rowNumber - Row number	myTable.getRowData([int]);
+setRowData: Set the data from one row by number
+@Param integer rowNumber - Row number
+@param array rowData - Row data	myTable.setRowData([int], [array]);
+getColumnData: Get the data from one column by number
+@Param integer columnNumber - Column number	myTable.getColumnData([int]);
+setColumnData: Set the data from one column by number
+@Param integer columnNumber - Column number
+@param array colData - Column data	myTable.setColumnData([int], [array]);
+setData: Set the table data
+@Param json newData - New json data, null will reload what is in memory.	myTable.setData([json]);
+setMerge: Merge cells
+@Param string columnName - Column name, such as A1.
+@Param integer colspan - Number of columns
+@Param integer rowspan - Number of rows
+myTable.setMerge([string], [int], [int]);
+getMerge: Get merged cells properties
+@Param string columnName - Column name, such as A1.	myTable.getMerge([string]);
+removeMerge: Destroy merged by column name
+@Param string columnName - Column name, such as A1.	myTable.removeMerge([string]);
+destroyMerged: Destroy all merged cells	myTable.destroyMerge();
+getCell: get current cell DOM
+@Param string columnName - str compatible with excel, or as object.	myTable.getCell([string]);
+getLabel: get current cell DOM innerHTML
+@Param string columnName - str compatible with excel, or as object.	myTable.getLabel([string]);
+getValue: get current cell value
+@Param mixed cellIdent - str compatible with excel, or as object.	myTable.getValue([string]);
+getValueFromCoords: get value from coords
+@Param integer x
+@Param integer y
+myTable.getValueFromCoords([integer], [integer]);
+setValue: change the cell value
+@Param mixed cellIdent - str compatible with excel, or as object.
+@Param string Value - new value for the cell
+@Param bool force - update readonly columns	myTable.setValue([string], [string], [bool]);
+setValueFromCoords: get value from coords
+@Param integer x
+@Param integer y
+@Param string Value - new value for the cell
+@Param bool force - update readonly columns	myTable.getValueFromCoords([integer], [integer], [string], [bool]);
+resetSelection: Reset the table selection
+@Param boolean executeBlur - execute the blur from the table
+myTable.resetSelection([bool]);
+updateSelection: select cells
+@Param object startCell - cell object
+@Param object endCell - cell object
+@Param boolean ignoreEvents - ignore onselection event	myTable.updateSelection([cell], [cell], true);
+updateSelectionFromCoords: select cells
+@Param integer x1
+@Param integer y1
+@Param integer x2
+@Param integer y2	myTable.updateSelectionFromCoords([integer], [integer], [integer], [integer]);
+getWidth: get the current column width
+@Param integer columnNumber - column number starting on zero	myTable.getWidth([integer]);
+setWidth: change column width
+@Param integer columnNumber - column number starting on zero
+@Param string newColumnWidth - New column width	myTable.setWidth([integer], [integer]);
+getHeight: get the current row height
+@Param integer rowNumber - row number starting on zero	myTable.getHeight([integer]);
+setHeight: change row height
+@Param integer rowNumber - row number starting on zero
+@Param string newRowHeight- New row height	myTable.setHeight([integer], [integer]);
+getHeader: get the current header by column number
+@Param integer columnNumber - Column number starting on zero	myTable.getHeader([integer]);
+getHeaders: get all header titles	myTable.getHeaders();
+setHeader: change header by column
+@Param integer columnNumber - column number starting on zero
+@Param string columnTitle - New header title	myTable.setHeader([integer], [string]);
+getStyle: get table or cell style
+@Param mixed - cell identification or null for the whole table.	myTable.getStyle([string]));
+setStyle: set cell(s) CSS style
+@Param mixed - json with whole table style information or just one cell identification. Ex. A1.
+@param k [optional]- CSS key
+@param v [optional]- CSS value	myTable.setSyle([object], [string], [string]);
+resetStyle: remove all style from a cell
+@Param string columnName - Column name, example: A1, B3, etc	myTable.resetStyle([string]);
+getComments: get cell comments
+@Param mixed - cell identification or null for the whole table.	myTable.getComments([string]);
+setComments: set cell comments
+@Param cell - cell identification
+@Param text - comments	myTable.setComments([string], [string]);
+orderBy: reorder a column asc or desc
+@Param integer columnNumber - column number starting on zero
+@Param smallint sortType - One will order DESC, zero will order ASC, anything else will toggle the current order	myTable.orderBy([integer], [boolean]);
+getConfig: get table definitions	myTable.getConfig();
+insertColumn: add a new column
+@param mixed - num of columns to be added or data to be added in one single column
+@param int columnNumber - number of columns to be created
+@param boolean insertBefore
+@param object properties - column properties	myTable.insertColumn([mixed], [integer], [boolean], [object]);
+deleteColumn: remove column by number
+@Param integer columnNumber - Which column should be excluded starting on zero
+@param integer numOfColumns - number of columns to be excluded from the reference column	myTable.deleteColumn([integer], [integer]);
+moveColumn: change the column position
+@Param integer columnPosition
+@Param integer newColumnPosition	myTable.moveColumn([integer], [integer]);
+insertRow: add a new row
+@Param mixed - number of blank lines to be insert or a single array with the data of the new row
+@Param integer rowNumber - reference row number
+@param boolean insertBefore	myTable.insertRow([mixed], [integer], [boolean]);
+deleteRow: remove row by number
+@Param integer rowNumber - Which row should be excluded starting on zero
+@Param integer numOfRows - number of lines to be excluded	myTable.deleteRow([integer], [integer]);
+moveRow: change the row position
+@Param integer rowPosition
+@Param integer newRowPosition	>myTable.moveRow([integer], [integer]);
+download: get the current data as a CSV file
+@Param bool - true to download parsed formulas.	myTable.download([bool]);
+getMeta: get the table or cell meta information
+@Param mixed - cell identification or null for the whole table.	myTable.getMeta([string]);
+setMeta: set the table or cell meta information
+@Param mixed - json with whole table meta information.	myTable.setMeta[mixed]);
+fullscreen: Toogle table fullscreen mode
+@Param boolan fullscreen - define fullscreen status as true or false	myTable.fullscreen([bool]);
+getSelectedRows: Get the selected rows
+@Param boolan asIds - Get the rowNumbers or row DOM elements	myTable.getSelectedRows([bool]);
+getSelectedColumns: Get the selected columns	myTable.getSelectedColumns();
+showIndex: show column of index numbers	myTable.showIndex();
+hideIndex: hide column of index numbers	myTable.hideIndex();
+search: search in the table, only if directive is enabled during inialization.
+@Param string - Search for word	myTable.search([string]);
+resetSearch: reset search table	myTable.resetSearch();
+whichPage: Which page showing on Jspreadsheet - Valid only when pagination is true.	myTable.whichPage();
+page: Go to page number- Valid only when pagination is true.
+@Param integer - Go to page number	myTable.page([integer]);
+undo: Undo last changes	myTable.undo();
+redo: Redo changes	myTable.redo();
