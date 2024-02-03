@@ -893,3 +893,130 @@ Jspreadsheet CE is released under the [MIT license]. Contact contact@jspreadshee
 </tr>
 </tbody>
 </table>
+
+
+<table class="table">
+<thead><tr><th>Event</th><th>description</th></tr></thead>
+<tbody>
+<tr>
+    <td><b>onload</b></td>
+    <td>This method is called when the method setData</td>
+</tr>
+<tr>
+    <td><b>onbeforechange</b></td>
+    <td>Before a column value is changed. NOTE: It is possible to overwrite the original value, by return a new value on this method. v3.4.0+</td>
+</tr>
+<tr>
+    <td><b>onchange</b></td>
+    <td>After a column value is changed.</td>
+</tr>
+<tr>
+    <td><b>onafterchanges</b></td>
+    <td>After all changes are applied in the table.</td>
+</tr>
+<tr>
+    <td><b>onpaste</b></td>
+    <td>After a paste action is performed in the javascript table.</td>
+</tr>
+<tr>
+    <td><b>onbeforepaste</b></td>
+    <td>Before the paste action is performed. Used to parse any input data, should return the data.</td>
+</tr>
+<tr>
+    <td><b>oninsertrow</b></td>
+    <td>After a new row is inserted.</td>
+</tr>
+<tr>
+    <td><b>onbeforeinsertrow</b></td>
+    <td>Before a new row is inserted. You can cancel the insert event by returning false.</td>
+</tr>
+<tr>
+    <td><b>ondeleterow</b></td>
+    <td>After a row is excluded.</td>
+</tr>
+<tr>
+    <td><b>onbeforedeleterow</b></td>
+    <td>Before a row is deleted. You can cancel the delete event by returning false.</td>
+</tr>
+<tr>
+    <td><b>oninsertcolumn</b></td>
+    <td>After a new column is inserted.</td>
+</tr>
+<tr>
+    <td><b>onbeforeinsertcolumn</b></td>
+    <td>Before a new column is inserted. You can cancel the insert event by returning false.</td>
+</tr>
+<tr>
+    <td><b>ondeletecolumn</b></td>
+    <td>After a column is excluded.</td>
+</tr>
+<tr>
+    <td><b>onbeforedeletecolumn</b></td>
+    <td>Before a column is excluded. You can cancel the insert event by returning false.</td>
+</tr>
+<tr>
+    <td><b>onmoverow</b></td>
+    <td>After a row is moved to a new position.</td>
+</tr>
+<tr>
+    <td><b>onmovecolumn</b></td>
+    <td>After a column is moved to a new position.</td>
+</tr>
+<tr>
+    <td><b>onresizerow</b></td>
+    <td>After a change in row height.</td>
+</tr>
+<tr>
+    <td><b>onresizecolumn</b></td>
+    <td>After a change in column width.</td>
+</tr>
+<tr>
+    <td><b>onselection</b></td>
+    <td>On the selection is changed.</td>
+</tr>
+<tr>
+    <td><b>onsort</b></td>
+    <td>After a colum is sorted.</td>
+</tr>
+<tr>
+    <td><b>onfocus</b></td>
+    <td>On table focus</td>
+</tr>
+<tr>
+    <td><b>onblur</b></td>
+    <td>On table blur</td>
+</tr>
+<tr>
+    <td><b>onmerge</b></td>
+    <td>On column merge</td>
+</tr>
+<tr>
+    <td><b>onchangeheader</b></td>
+    <td>On header change</td>
+</tr>
+<tr>
+    <td><b>onundo</b></td>
+    <td>On undo is applied</td>
+</tr>
+<tr>
+    <td><b>onredo</b></td>
+    <td>On redo is applied</td>
+</tr>
+<tr>
+    <td><b>oneditionstart</b></td>
+    <td>When a openEditor is called.</td>
+</tr>
+<tr>
+    <td><b>oneditionend</b></td>
+    <td>When a closeEditor is called.</td>
+</tr>
+<tr>
+    <td><b>onchangestyle</b></td>
+    <td>When a setStyle is called.</td>
+</tr>
+<tr>
+    <td><b>onchangemeta</b></td>
+    <td>When a setMeta is called.</td>
+</tr>
+</tbody>
+</table>
